@@ -87,7 +87,11 @@
 				>
 					<input
 						id={`Input${index}`}
-						class={`no-cursor w-4 border-[#3C8AC6] focus:border-b focus:outline-none `}
+						class={`no-cursor w-4 border-[#3C8AC6] focus:border-b focus:outline-none ${
+							otpCheck().isComplete && !otpCheck().isCorrect
+								? 'bg-[#FEF7F6] text-rose-500'
+								: 'text-[#3C8AC6]'
+						}`}
 						type="number"
 						maxlength="1"
 						oninput={(event: any) => {
